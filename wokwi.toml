@@ -1,5 +1,9 @@
+[wokwi]
+version = 1
 name = "Pokus s LED"
 platform = "esp32"
 board = "esp32dev"
 main = "src/main.cpp"
+firmware = ".pio/build/esp32dev/firmware.bin"
+elf = ".pio/build/esp32dev/firmware.elf"
 description = "Blink LED on GPIO2 (ESP32)"

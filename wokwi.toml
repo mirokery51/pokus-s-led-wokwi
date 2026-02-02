@@ -1,0 +1,5 @@
+name = "Pokus s LED"
+platform = "esp32"
+board = "esp32dev"
+main = "src/main.cpp"
+description = "Blink LED on GPIO2 (ESP32)"

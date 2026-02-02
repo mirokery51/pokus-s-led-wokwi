@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "author": "GitHub Copilot",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "esp32",
+      "type": "wokwi-esp32-devkit-v1",
+      "left": 100,
+      "top": 50
+    },
+    {
+      "id": "led1",
+      "type": "wokwi-led",
+      "left": 300,
+      "top": 90,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    ["esp32:D2", "led1:A", "", ["v20", "h20", "*", "h-10", "v-10"]],
+    ["led1:C", "esp32:GND", "", []]
+  ],
+  "files": {
+    "src/main.cpp": "#include <Arduino.h>\n\n#define LED_PIN 2\nconst bool INVERTED = true;\n\n// put function declarations here:\nint myFunction(int, int);\n\nvoid setup() {\n  Serial.begin(115200);\n  // Nastavíme pin ako výstupný a použijeme pomocnú funkciu\n  pinMode(LED_PIN, OUTPUT);\n  Serial.println(\"Start\");\n  int result = myFunction(2, 3);\n}\n\nvoid loop() {\n  // Blikanie LED (podporuje invertovanú logiku)\n  digitalWrite(LED_PIN, INVERTED ? LOW : HIGH);\n  Serial.println(\"LED ON\");\n  delay(500);\n  digitalWrite(LED_PIN, INVERTED ? HIGH : LOW);\n  Serial.println(\"LED OFF\");\n  delay(500);\n}\n\n// put function definitions here:\nint myFunction(int x, int y) {\n  return x + y;\n}\n"
+  }
+}
